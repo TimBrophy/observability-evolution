@@ -1,0 +1,13 @@
+{
+  "name": "observability-evolution",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "fslides serve",
+    "pdf": "fslides pdf",
+    "gif": "fslides gif"
+  },
+  "devDependencies": {
+    "fslides": "*"
+  }
+}

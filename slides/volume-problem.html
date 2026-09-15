@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Volume Problem</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{width:100%;height:100%;overflow:hidden;background:#0d0f14}
+body{width:1280px;height:720px;overflow:hidden;position:absolute;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;background:#0d0f14;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 100px}
+.bar{position:fixed;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,#00BFB3 0%,#0077CC 100%)}
+.noise{position:fixed;inset:0;background-image:radial-gradient(rgba(255,80,80,.06) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
+.f1{opacity:0;animation:up .5s ease forwards .1s}
+.f2{opacity:0;animation:up .5s ease forwards .25s}
+.f3{opacity:0;animation:up .5s ease forwards .45s}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#ff6b6b;margin-bottom:20px}
+h2{font-size:2.6rem;font-weight:900;letter-spacing:-.03em;margin-bottom:48px;line-height:1.1}
+.stats{display:flex;gap:24px;margin-bottom:48px}
+.stat-card{flex:1;padding:32px 28px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.03);text-align:center}
+.stat-num{font-size:3.2rem;font-weight:900;letter-spacing:-.04em;line-height:1;margin-bottom:10px}
+.stat-card:nth-child(1) .stat-num{color:#ff6b6b}
+.stat-card:nth-child(2) .stat-num{color:#FFB800}
+.stat-card:nth-child(3) .stat-num{color:#00BFB3}
+.stat-label{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.5}
+.insight{padding:24px 32px;border-left:3px solid #00BFB3;background:rgba(0,191,179,.07);border-radius:0 10px 10px 0;max-width:900px}
+.insight p{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.75);line-height:1.65}
+.insight strong{color:#fff;font-weight:700}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<div class="noise"></div>
+<div class="eyebrow f1">02 — The Volume Problem</div>
+<h2 class="f2">Modern architectures generate<br>data faster than humans can process it</h2>
+<div class="stats f3">
+  <div class="stat-card">
+    <div class="stat-num">100×</div>
+    <div class="stat-label">More services to monitor<br>vs. monolith era</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">97%</div>
+    <div class="stat-label">Of alerts are noise<br>in a typical enterprise</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">3.5h</div>
+    <div class="stat-label">Average MTTR when teams<br>rely on reactive monitoring</div>
+  </div>
+</div>
+<div class="insight f3">
+  <p><strong>The fundamental problem:</strong> you can't hire enough engineers to watch dashboards at scale. Observability isn't just better monitoring — it's applying <strong>machine reasoning</strong> to data volumes humans never could.</p>
+</div>
+<script src="/js/fuckslides.js"></script>
+<script>
+(function(){if(window!==window.top)return;const W=1280,H=720;function f(){var s=Math.min(innerWidth/W,innerHeight/H);document.body.style.transform='scale('+s+')';document.body.style.transformOrigin='0 0';document.body.style.left=((innerWidth-W*s)/2)+'px';document.body.style.top=((innerHeight-H*s)/2)+'px'}f();addEventListener('resize',f)})();
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Monitoring Era</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{width:100%;height:100%;overflow:hidden;background:#0d0f14}
+body{width:1280px;height:720px;overflow:hidden;position:absolute;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;background:#0d0f14;color:#fff;padding:70px 100px 60px}
+.bar{position:fixed;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,#00BFB3 0%,#0077CC 100%)}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.f1{opacity:0;animation:up .5s ease forwards .1s}
+.f2{opacity:0;animation:up .5s ease forwards .25s}
+.f3{opacity:0;animation:up .5s ease forwards .4s}
+.f4{opacity:0;animation:up .5s ease forwards .55s}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#00BFB3;margin-bottom:16px}
+h2{font-size:2.8rem;font-weight:900;letter-spacing:-.03em;margin-bottom:44px;line-height:1.1}
+.timeline{display:flex;flex-direction:column;gap:0}
+.era{display:flex;align-items:flex-start;gap:32px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.era:last-child{border-bottom:none}
+.era-year{font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:700;color:#00BFB3;min-width:90px;padding-top:3px}
+.era-content strong{display:block;font-size:1rem;font-weight:700;margin-bottom:5px}
+.era-content p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.55;max-width:880px}
+.era-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-left:12px;vertical-align:middle}
+.reactive{background:rgba(255,90,90,.15);color:#ff7070}
+.proactive{background:rgba(0,191,179,.15);color:#00BFB3}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<div class="eyebrow f1">01 — History &amp; Evolution</div>
+<h2 class="f2">How we got here</h2>
+<div class="timeline">
+  <div class="era f3">
+    <div class="era-year">1980s–90s</div>
+    <div class="era-content"><strong>Network Monitoring Begins <span class="era-tag reactive">Reactive</span></strong><p>SNMP, ping checks, and MRTG graphs. Engineers watched dashboards for red lights. Systems were simple enough that "up or down" was a meaningful question.</p></div>
+  </div>
+  <div class="era f3">
+    <div class="era-year">2000s</div>
+    <div class="era-content"><strong>APM &amp; Log Aggregation <span class="era-tag reactive">Reactive</span></strong><p>Nagios, Zabbix, New Relic APM arrive. Log files centralised. Still fundamentally reactive — you knew about a problem after users told you.</p></div>
+  </div>
+  <div class="era f4">
+    <div class="era-year">2010s</div>
+    <div class="era-content"><strong>The Cloud &amp; Microservices Explosion <span class="era-tag reactive">Reactive → Struggling</span></strong><p>Containers, Kubernetes, serverless. Services multiplied 100×. Existing tools couldn't correlate across hundreds of ephemeral components. The monitoring model broke.</p></div>
+  </div>
+  <div class="era f4">
+    <div class="era-year">2020s</div>
+    <div class="era-content"><strong>Observability &amp; AI-Driven Operations <span class="era-tag proactive">Proactive</span></strong><p>Distributed tracing, unified telemetry, machine learning on streams. The question shifts from "is it down?" to "why is it slow, for whom, and what will break next?"</p></div>
+  </div>
+</div>
+<script src="/js/fuckslides.js"></script>
+<script>
+(function(){if(window!==window.top)return;const W=1280,H=720;function f(){var s=Math.min(innerWidth/W,innerHeight/H);document.body.style.transform='scale('+s+')';document.body.style.transformOrigin='0 0';document.body.style.left=((innerWidth-W*s)/2)+'px';document.body.style.top=((innerHeight-H*s)/2)+'px'}f();addEventListener('resize',f)})();
+</script>
+</body>
+</html>

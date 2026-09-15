@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elastic Differentiators</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{width:100%;height:100%;overflow:hidden;background:#0d0f14}
+body{width:1280px;height:720px;overflow:hidden;position:absolute;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;background:#0d0f14;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 100px}
+.bar{position:fixed;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,#00BFB3 0%,#0077CC 100%)}
+.glow{position:fixed;right:-100px;bottom:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,191,179,.07) 0%,transparent 70%);pointer-events:none}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.f1{opacity:0;animation:up .5s ease forwards .1s}
+.f2{opacity:0;animation:up .5s ease forwards .25s}
+.f3{opacity:0;animation:up .5s ease forwards .4s}
+.f4{opacity:0;animation:up .5s ease forwards .55s}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#00BFB3;margin-bottom:18px}
+h2{font-size:2.6rem;font-weight:900;letter-spacing:-.03em;margin-bottom:44px}
+.diffs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px}
+.diff{padding:28px 26px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);display:flex;gap:18px}
+.diff-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
+.diff:nth-child(1) .diff-icon{background:rgba(0,191,179,.15)}
+.diff:nth-child(2) .diff-icon{background:rgba(255,184,0,.15)}
+.diff:nth-child(3) .diff-icon{background:rgba(132,144,255,.15)}
+.diff:nth-child(4) .diff-icon{background:rgba(255,107,107,.15)}
+.diff-text strong{display:block;font-size:.95rem;font-weight:700;margin-bottom:6px}
+.diff-text p{font-size:.83rem;color:rgba(255,255,255,.45);line-height:1.55}
+.bottom-line{padding:20px 28px;border-left:3px solid #00BFB3;background:rgba(0,191,179,.06);border-radius:0 10px 10px 0}
+.bottom-line p{font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.6}
+.bottom-line strong{color:#fff}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<div class="glow"></div>
+<div class="eyebrow f1">06 — Elastic's Differentiators</div>
+<h2 class="f2">Why organisations choose Elastic</h2>
+<div class="diffs f3">
+  <div class="diff">
+    <div class="diff-icon">🔍</div>
+    <div class="diff-text"><strong>One store for everything</strong><p>Logs, metrics, traces, security events, and business data in a single Elasticsearch index — no cross-tool pivoting mid-investigation.</p></div>
+  </div>
+  <div class="diff">
+    <div class="diff-icon">⚡</div>
+    <div class="diff-text"><strong>Search-first architecture</strong><p>Ad-hoc queries across petabytes in seconds. Most observability tools are purpose-built BI tools dressed as monitoring — Elastic is a search engine first.</p></div>
+  </div>
+  <div class="diff">
+    <div class="diff-icon">🤖</div>
+    <div class="diff-text"><strong>AI built on your data</strong><p>Elastic AI Assistant uses the LLM of your choice over your own indexed data — no vendor lock-in, no data leaving your environment.</p></div>
+  </div>
+  <div class="diff">
+    <div class="diff-icon">🔓</div>
+    <div class="diff-text"><strong>Open by default</strong><p>OTel-native ingestion, ECS schema, open source core. Instrument once, retain the ability to switch backends — Elastic competes on value, not lock-in.</p></div>
+  </div>
+</div>
+<div class="bottom-line f4">
+  <p><strong>The Elastic advantage:</strong> observability, security, and search on one platform means a single team, one licence to optimise, and AI that can reason across all your data simultaneously — not just the silo it was given.</p>
+</div>
+<script src="/js/fuckslides.js"></script>
+<script>
+(function(){if(window!==window.top)return;const W=1280,H=720;function f(){var s=Math.min(innerWidth/W,innerHeight/H);document.body.style.transform='scale('+s+')';document.body.style.transformOrigin='0 0';document.body.style.left=((innerWidth-W*s)/2)+'px';document.body.style.top=((innerHeight-H*s)/2)+'px'}f();addEventListener('resize',f)})();
+</script>
+</body>
+</html>

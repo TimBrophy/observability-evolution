@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Three Pillars</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{width:100%;height:100%;overflow:hidden;background:#0d0f14}
+body{width:1280px;height:720px;overflow:hidden;position:absolute;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;background:#0d0f14;color:#fff;padding:68px 100px 60px}
+.bar{position:fixed;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,#00BFB3 0%,#0077CC 100%)}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.f1{opacity:0;animation:up .5s ease forwards .1s}
+.f2{opacity:0;animation:up .5s ease forwards .25s}
+.f3{opacity:0;animation:up .5s ease forwards .4s}
+.f4{opacity:0;animation:up .5s ease forwards .55s}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#00BFB3;margin-bottom:16px}
+h2{font-size:2.6rem;font-weight:900;letter-spacing:-.03em;margin-bottom:40px}
+.pillars{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:32px}
+.pillar{padding:28px 24px 26px;border-radius:14px;border-top:3px solid}
+.pillar-logs{background:rgba(0,191,179,.06);border-color:#00BFB3}
+.pillar-metrics{background:rgba(255,184,0,.06);border-color:#FFB800}
+.pillar-traces{background:rgba(100,130,255,.06);border-color:#8490FF}
+.pillar-icon{font-size:1.6rem;margin-bottom:14px}
+.pillar h3{font-size:1.2rem;font-weight:900;margin-bottom:8px}
+.pillar-logs h3{color:#00BFB3}
+.pillar-metrics h3{color:#FFB800}
+.pillar-traces h3{color:#8490FF}
+.pillar p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6}
+.pillar .mono{font-family:'JetBrains Mono',monospace;font-size:.75rem;margin-top:12px;padding:8px 12px;background:rgba(0,0,0,.3);border-radius:6px;color:rgba(255,255,255,.5)}
+.tagline{font-size:1rem;color:rgba(255,255,255,.4);line-height:1.65;padding:20px 28px;border:1px solid rgba(255,255,255,.07);border-radius:10px;text-align:center}
+.tagline strong{color:rgba(255,255,255,.75)}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<div class="eyebrow f1">03 — Core Data Signals</div>
+<h2 class="f2">The three pillars of observability</h2>
+<div class="pillars f3">
+  <div class="pillar pillar-logs">
+    <div class="pillar-icon">📋</div>
+    <h3>Logs</h3>
+    <p>Immutable, timestamped records of discrete events. The most human-readable signal — and the highest volume.</p>
+    <div class="mono">2024-01-15T14:23:01Z ERROR<br>checkout timeout after 5002ms</div>
+  </div>
+  <div class="pillar pillar-metrics">
+    <div class="pillar-icon">📈</div>
+    <h3>Metrics</h3>
+    <p>Numeric measurements sampled over time. Efficient, queryable, perfect for alerting and trending at massive scale.</p>
+    <div class="mono">http_requests_total{<br>  status="500"} 47</div>
+  </div>
+  <div class="pillar pillar-traces">
+    <div class="pillar-icon">🔗</div>
+    <h3>Traces</h3>
+    <p>End-to-end records of a single request's journey across services. The key to understanding distributed latency.</p>
+    <div class="mono">trace_id: 4f2a9c8e…<br>span: checkout → payment</div>
+  </div>
+</div>
+<div class="tagline f4"><strong>Logs tell you what happened. Metrics tell you how often. Traces tell you why it was slow.</strong> You need all three to ask — and answer — arbitrary questions about your system's behaviour.</div>
+<script src="/js/fuckslides.js"></script>
+<script>
+(function(){if(window!==window.top)return;const W=1280,H=720;function f(){var s=Math.min(innerWidth/W,innerHeight/H);document.body.style.transform='scale('+s+')';document.body.style.transformOrigin='0 0';document.body.style.left=((innerWidth-W*s)/2)+'px';document.body.style.top=((innerHeight-H*s)/2)+'px'}f();addEventListener('resize',f)})();
+</script>
+</body>
+</html>

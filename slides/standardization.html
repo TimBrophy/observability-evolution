@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Standards and Unification</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{width:100%;height:100%;overflow:hidden;background:#0d0f14}
+body{width:1280px;height:720px;overflow:hidden;position:absolute;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;background:#0d0f14;color:#fff;display:flex;gap:0}
+.bar{position:fixed;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,#00BFB3 0%,#0077CC 100%)}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.f1{opacity:0;animation:up .5s ease forwards .1s}
+.f2{opacity:0;animation:up .5s ease forwards .25s}
+.f3{opacity:0;animation:up .5s ease forwards .4s}
+.f4{opacity:0;animation:up .5s ease forwards .55s}
+.f5{opacity:0;animation:up .5s ease forwards .7s}
+.left{flex:1;padding:68px 56px 60px 100px;display:flex;flex-direction:column;justify-content:center}
+.right{width:480px;padding:60px 60px 60px 40px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(255,255,255,.06)}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#00BFB3;margin-bottom:18px}
+h2{font-size:2.6rem;font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:24px}
+.problem{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:32px}
+.benefit{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.benefit-icon{width:32px;height:32px;border-radius:8px;background:rgba(0,191,179,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem;margin-top:1px}
+.benefit-text strong{display:block;font-size:.9rem;font-weight:700;margin-bottom:3px}
+.benefit-text span{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.5}
+.otel-badge{padding:28px 24px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.03);margin-bottom:20px}
+.otel-badge .otel-logo{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700;color:#00BFB3;margin-bottom:8px}
+.otel-badge p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6}
+.ecs-badge{padding:20px 24px;border:1px solid rgba(255,184,0,.15);border-radius:14px;background:rgba(255,184,0,.04)}
+.ecs-badge .ecs-logo{font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:700;color:#FFB800;margin-bottom:6px}
+.ecs-badge p{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.55}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<div class="left">
+  <div class="eyebrow f1">04 — Standards &amp; Unification</div>
+  <h2 class="f2">The fragmentation tax<br>is costing you time</h2>
+  <p class="problem f3">Before standards, every team instrumented differently. Correlating a database metric with an application trace with a Kubernetes log meant custom ETL, brittle mappings, and slow queries across siloed stores.</p>
+  <div class="benefit f4">
+    <div class="benefit-icon">⚡</div>
+    <div class="benefit-text"><strong>Faster correlation</strong><span>Shared field names mean joins work out of the box — no translation layer between signals.</span></div>
+  </div>
+  <div class="benefit f4">
+    <div class="benefit-icon">🔓</div>
+    <div class="benefit-text"><strong>Vendor portability</strong><span>Instrument once with OTel — point the exporter at any backend. No lock-in.</span></div>
+  </div>
+  <div class="benefit f5">
+    <div class="benefit-icon">🤖</div>
+    <div class="benefit-text"><strong>AI-ready data</strong><span>Consistent schema is the foundation that makes LLM-assisted root-cause analysis actually work.</span></div>
+  </div>
+</div>
+<div class="right">
+  <div class="otel-badge f3">
+    <div class="otel-logo">OpenTelemetry</div>
+    <p>CNCF standard for collecting logs, metrics, and traces. SDKs for every major language. Adopted by every major vendor. The de-facto collection layer.</p>
+  </div>
+  <div class="ecs-badge f4">
+    <div class="ecs-logo">Elastic Common Schema (ECS)</div>
+    <p>Field-level naming convention mapping any data source to a unified schema. Powers cross-source search and ML without manual mapping.</p>
+  </div>
+</div>
+<script src="/js/fuckslides.js"></script>
+<script>
+(function(){if(window!==window.top)return;const W=1280,H=720;function f(){var s=Math.min(innerWidth/W,innerHeight/H);document.body.style.transform='scale('+s+')';document.body.style.transformOrigin='0 0';document.body.style.left=((innerWidth-W*s)/2)+'px';document.body.style.top=((innerHeight-H*s)/2)+'px'}f();addEventListener('resize',f)})();
+</script>
+</body>
+</html>
